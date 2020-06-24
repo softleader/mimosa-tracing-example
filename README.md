@@ -1,7 +1,7 @@
 # mimosa-tracing-example
 Example using opentracing starter
 
-```
+```sh
 # Run server
 mvn spring-boot:run
 
