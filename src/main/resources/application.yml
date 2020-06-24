@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: tracing-example
+
+feign:
+  client:
+    otp.url: http://mimosa.tech.118.163.91.247.nip.io
+
+opentracing:
+  jaeger:
+    enabled: true
+    enable-b3-propagation: true
+    enable128-bit-traces: true
+    udp-sender:
+      host: 192.168.1.60
+      port: 6831
+    log-spans: true
+    const-sampler:
+      decision: true
+    probabilistic-sampler:
+      sampling-rate: 1.00
+  spring:
+    web:
+      enabled: true
+      client:
+        enabled: true
+    cloud:
+      feign:
+        enabled: true
+      reactor:
+        enabled: true
+      async:
+        enabled: true
+      log:
+        enabled: true
+      scheduled:
+        enabled: true
+      redis:
+        enabled: true
+      jdbc:
+        enabled: true
+
+server:
+  port: 8088
