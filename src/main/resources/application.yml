@@ -4,7 +4,8 @@ spring:
 
 feign:
   client:
-    otp.url: http://mimosa.tech.118.163.91.247.nip.io
+    # 要呼叫的 api 目標
+    otp.url: http://localhost:8081
 
 opentracing:
   jaeger:
@@ -12,6 +13,7 @@ opentracing:
     enable-b3-propagation: true
     enable128-bit-traces: true
     udp-sender:
+      # OpenTracing Jaeger Server
       host: 192.168.1.60
       port: 6831
     log-spans: true
@@ -39,6 +41,3 @@ opentracing:
         enabled: true
       jdbc:
         enabled: true
-
-server:
-  port: 8088
